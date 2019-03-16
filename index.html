@@ -1,1 +1,469 @@
+<!-- UWAGA! Kod strony został zapisany przez Łukasza Kowalczyka na wzór przykładu ze strony psdrepo.com . Wszelkie próby kopii będą karane!-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Portfolio">
+    <meta name="author" content="Łukasz Kowalczyk">
+    <link rel="icon" href="icon/favicon.ico"> 
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,900" rel="stylesheet">
+    <link href="./css/lightbox.css" rel="stylesheet">
+    <style>
+        /** Styles for elements what they are active only on above defined min-width **/
+        @media (min-width:1600px){
+            .container {
+                width: 1500px;
+                max-width: 100%;
+            }
+        }
+        
+        /** Fonts Styles **/
+        
+        /** Roboto Thin **/
+        .rt {
+            font-family: "Roboto", serif;
+            font-weight: 100;
+        }
+        
+        /** Roboto Light **/
+        .rl {
+            font-family: "Roboto", serif;
+            font-weight: 300;
+        }
+        
+        /** Roboto Regular **/
+        .rr {
+            font-family: "Roboto", serif;
+            font-weight: 400;
+        }
+        
+        /** Roboto Black **/
+        .rb {
+            font-family: "Roboto", serif;
+            font-weight: 900;
+        }
+        
+        /** Navigation Bar Styles **/
+        .navbar {
+            z-index: 2;
+            background-color: white;
+        }
+        .nav-item {
+            font-size: 80%;
+        }
+        
+        /** First Container Styles **/
+        .main {
+            background-image: url(elements/pictures/flower-background.jpg);
+            background-position: right bottom;
+            background-size: cover;
+            padding-bottom: 180px;
+            padding-top: 250px;
+        }
+        .creative{
+            padding-top: 45px;
+            padding-bottom: 45px;
+            max-width: 497px;
+            background-color:rgba(255,255,255,1);
+        }
+        
+        /** Container with Quote Styles **/
+        .quote {
+            background-color: #1e1e1e;
+            background-image: url(elements/pictures/text-quotes-.png);
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            color: #ebe9e6;
+        }
+        .sj:hover {
+            color: white;
+        }
+        /** Portfolio Container Styles **/
+        .portfolio {
+            padding-top: 65px;
+        }
+        .row_img {
+            height: 100%;
+            width: 100%;
+            cursor: pointer;
+        }
+        /** About Container Styles **/
+        .about {
+            padding-top: 80px;
+            padding-bottom: 20px;
+        } 
+        
+        /** Container with your Data Styles **/
+        .id {
+            background-color: #dedede;
+            background-image: url(elements/pictures/girl.png);
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: right;
+            text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+        }
+        
+        /** Contact Container Styles **/
+        .contact {
+            padding-top:80px;
+        }
+        .contact-col {
+            position: relative;
+            height: 132px;
+            max-width: 230px;
+            border-style: solid;
+            border-color: black;
+            border-width: 1px;
+            cursor: pointer;
+        }
+        .contact-col:hover {
+            background: radial-gradient(#e6e9f0, #fed6e3);
+        }
+        .contact-col:hover .behind {
+            transform: translate(0px, 40px);
+            text-decoration: underline;
+            font-size: 18px;
+            opacity: 1;
+        }
+        .contact-img {
+            position: absolute;
+            top: -40%;
+            left: 28%;
+        }
+        .behind {
+            min-width: 200px;
+            position: absolute;
+            top: 100px;
+            opacity: 0;
+            transition: .5s ease;
+            left: 15px;
+        }
+        
+        /** Styles of lines under headings **/
+        hr {
+            height: 2px;
+            background-color: pink;  
+            width: 94px;
+        }
+        
+        /** Footer Container Styles **/
+        .footer {
+            min-height: 140px;
+            background-color: #1e1e1e;
+        }
+        .footer img {
+            width: 28px;
+        }
+        .footer-logos {
+            max-width: 219px
+        }
+        .footer-logos img {
+            cursor: pointer;
+        }
+        
+        /** Styles of overlay on hover on images **/
+        .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
+        background: linear-gradient(#e6e9f0, #fed6e3);      
+        }
+        .c:hover .overlay {
+        opacity: .83;
+        }
+        
+        /** Styles for elements what they are active only below defined max-width **/
+        @media (max-width:600px){
+            .container2 {
+                position: static;
+            }
+            .flower {
+                padding-top: 200px;
+            }
+            .creative {
+                background-color:rgba(255,255,255,0.8);
+            }
+        }
+        @media (max-width:575px){
+            .id {
+                background-image: url(elements/pictures/id-temp-small.jpg);
+                background-position: right;
+            }   
+        }
+        @media (max-width:991px){
+            .id {
+                background-attachment: scroll;
+            }   
+            .id-s-t {
+                font-size: 23px;
+            }
+        }
+        
+        /** Styles in modal text **/
+        .red{
+            color:red;
+	    }
+      </style>
+        <title>Moja strona w Bootstrapie</title>
+    </head>
+      <body>
+          
+          <!-- Navigation Bar -->
+          <nav class=" navbar navbar-toggleable-md fixed-top navbar-light bg-faded">
+              <div class="container mx-auto container2">
+                  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <a style="cursor:pointer" class="navbar-brand" href="#home">
+                      <p class="h2 rb">de<span style="color: pink">s</span>in</p>
+                  </a>
+                  <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                      <ul class="navbar-nav ml-auto rr text-center">
+                          <li class="nav-item active">
+                              <a class="nav-link" href="#portfolio">PORTFOLIO<span class="sr-only">(current)</span></a>
+                          </li>
+                          <li class="nav-item ">
+                              <a class="nav-link" href="#about">ABOUT</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="#contact">CONTACT</a>
+                          </li>
+                    </ul>
+                </div> 
+            </div>
+          </nav>
+          
+          <!-- First Container "Main, Home" -->
+          <div id="home" class="main container-fluid">
+              <div class="creative container text-center">
+                  <hr style="width:50px; height:4px;">
+                  <h1 class="rl">I AM CREATIVE</h1>
+                  <p class="rt h5 pt-2">just design.</p>
+              </div>
+          </div>
+          
+          <!-- Second Container "Quote" -->
+          <div class="quote container-fluid text-center py-5">
+              <p class="rl">Design is not just what it looks like and feels like. Design is how it works.</p>
+              <a style="cursor:pointer; text-decoration:none" href="https://www.google.pl/search?q=Steve+Jobs&oq=Steve+Jobs&aqs=chrome..69i57j0l5.2796j0j7&sourceid=chrome&ie=UTF-8" class="h5 rb sj">STEVE JOBS</a>
+          </div>
+          
+          <!-- Third Container "Portoflio" -->
+          <div id="portfolio" class="portfolio container">
+              <div class="row pl-3">
+                  <h5 class="rl">Portfolio</h5>
+              </div>
+              <div class="row pl-3">
+                  <hr class="mx-0 mb-5 mt-1">
+              </div>
+              <div class="row mb-sm-3">
+                  
+                  <!-- First image -->
+                  <div class="mt-3 col-sm-12 col-md-6 c">
+                      <a href="elements/pictures/fruit_big.jpg" data-lightbox="image-set" data-title="Fruits">
+                          <figure class="row_img m-0" style="position: relative;">                        
+                              <img class="img-fluid " alt="ananasy" src="./elements/pictures/fruit2.jpg">
+                              <div class="overlay"><img style="position: relative;top:47%;left:47%" class="" src="elements/pictures/search-logo.png"></div>
+                          </figure>
+                      </a>
+                  </div>
+                  
+                  <!-- Second image -->
+                  <div class="mt-3 col-sm-6 col-md-3 c">
+                      <a href="elements/pictures/nature_big.jpg" data-lightbox="image-set" data-title="Nature">
+                          <figure class="row_img m-0" style="position: relative;">
+                              <img class="img-fluid row_img" alt="roślina" src="./elements/pictures/nature.jpg">
+                              <div class="overlay"><img style="position: relative;top:47%;left:47%" class="" src="elements/pictures/search-logo.png"></div>
+                          </figure>
+                      </a>
+                  </div>
+                  
+                  <!-- Third image -->
+                  <div class="mt-3 col-sm-6 col-md-3 c">
+                      <a href="elements/pictures/museum_big.jpg" data-lightbox="image-set" data-title="Museum">
+                          <figure class="row_img m-0" style="position: relative;">
+                              <img class="img-fluid row_img" alt="schody" src="./elements/pictures/museum.jpg">
+                              <div class="overlay"><img style="position: relative;top:47%;left:47%" class="" src="elements/pictures/search-logo.png"></div>
+                          </figure>
+                      </a>
+                  </div>
+                  
+              </div>
+                
+              <div class="row">
+                  
+                  <!-- Fourth image -->
+                  <div class="mt-3 col-sm-12 col-md-7 c">
+                      <a href="elements/pictures/chair_big.jpg" data-lightbox="image-set" data-title="Chair">
+                          <figure class="row_img m-0" style="position: relative;">
+                              <img class="img-fluid row_img" alt="biurko" src="./elements/pictures/chair.jpg">
+                              <div class="overlay"><img style="position: relative;top:47%;left:47%" class="" src="elements/pictures/search-logo.png"></div>
+                          </figure>
+                      </a>
+                  </div>
+                  
+                  <!-- Fiveth image -->
+                  <div class="mt-3 col-sm-12 col-md-5 c">
+                      <a href="elements/pictures/wheel_big.jpg" data-lightbox="image-set" data-title="Wheel">
+                          <figure class="row_img m-0" style="position: relative;">
+                              <img class="mg-fluid row_img" alt="koło" src="./elements/pictures/wheel.jpg">
+                              <div class="overlay"><img style="position: relative;top:47%;left:47%" class="" src="elements/pictures/search-logo.png"></div>
+                          </figure>
+                      </a>
+                  </div>
+                  
+              </div>
+              
+          </div>
+          
+          <!-- Fourth Container "About" -->
+          <div id="about" class="about container">
+              <div class="row pl-3">
+                 <h5 class="rl">About</h5>
+              </div>
+                          
+              <div class="row pl-3">
+                  <hr class="mx-0 mb-5 mt-1">
+              </div>
+          </div>
+          
+          <!-- Fiveth Container "Id" -->
+          <div class="id container-fluid">
+              <div class="container pt-4">
+                  <div class="row pt-5">
+                      <div class="col-xs-12 offset-md-1 rb h3 p-0">Hello, I’m Katarzyna,<br/>
+                          graphic designer based in Tychy, Poland.</div>
+                  </div>
+                  <div class="row pt-5">
+                      <div class="col-xs-12 rl offset-md-1 id-s-t"> 
+                          <img src="elements/pictures/human.png" alt="imie" class="pr-4">
+                          Katarzyna Malcharek
+                      </div>
+                  </div>
+                  <div class="row pt-4">
+                      <div class="col-xs-12 rl offset-md-1 id-s-t"> 
+                          <img src="elements/pictures/localization.png" alt="lokalizacja" class="pr-4">
+                          Tychy, Poland
+                      </div>
+                  </div>
+                  <div class="row pt-4">                     
+                      <div class="col-xs-1 offset-md-1">
+                          <img src="elements/pictures/circle.png" alt="branża" class="pr-3 ">
+                      </div>
+                      <div class="col-xs-10 rl id-s-t pb-5"> 
+                          Web design <br>
+                          Mobile design <br>
+                          UI design
+                      </div>
+                  </div>
+              </div>
+          </div>
+          
+          <!-- Sixth Container "Contact" -->
+          <div id="contact" class="contact container">
+              <div class="row pl-3">
+                  <h5 class="rl">Contact</h5>
+              </div>
+              <div class="row pl-3">
+                  <hr class="mx-0 mb-5 mt-1">
+              </div>
+              <div class="row text-center rl ms-auto">
+                  <div class="col-sm-12 col-md-4 col-xl-2 mx-auto contact-col pt-4 my-5" data-toggle="modal" data-target="#exampleModal">
+                      <a class="behind bh-1">lukikowal4@gmail.com</a>
+                      <img class="contact-img" src="elements/pictures/mail.jpg"  alt="mail">
+                      <p class="pt-5">Write me an e-mail</p>
+                  </div>
+                  <div class="col-sm-12 col-md-4 col-xl-2 mx-auto contact-col pt-4 my-5">
+                      <a class="behind bh-2">123-456-789</a>
+                      <img class="contact-img" src="elements/pictures/mobile.jpg"  alt="mail">
+                      <p class="pt-5">Call me</p>
+                  </div>
+                  <div class="col-sm-12 col-md-4 col-xl-2 mx-auto contact-col pt-4 my-5">
+                      <a class="behind bh-3">www.your-portfolio.com</a>
+                      <img class="contact-img" src="elements/pictures/behance.jpg"  alt="mail">
+                      <p class="pt-5">Check out my portfolio</p>
+                  </div>
+              </div>  
+            </div>
+            
+            <!-- Seventh Container "Footer" -->
+            <div class="footer container-fluid">
+                <div class="footer-logos container pt-5">
+                    <a href="https://www.facebook.com/"><img src="elements/pictures/facebook.png" alt="facebook-logo" class="mx-3"></a>
+                    <a href="https://www.instagram.com/"><img src="elements/pictures/instagram.png" alt="instagram-logo" class="mx-3"></a>
+                    <a href="https://pl.pinterest.com/"><img src="elements/pictures/pinterest.png" alt="pinterest-logo" class="mx-3"></a>     
+                </div>
+                <div class="container pt-1">
+                    <p class="text-center text-white rl mb-0 mt-4">Copyright &copy; 2017 By Łukasz Kowalczyk - Following the example of the page psdrepo.com - Its only for education purposes!</p>
+                </div>
+            </div>   
+          
+            <!-- Modal - Contact Formulate -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header text-center">
+                            <h5 class="modal-title mx-auto" id="exampleModalLabel">Contact Me!</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container">
+                                <div class="col-md-12">
+                                    <div class="form-area">  
+                                        <form role="form">
+                                            <br style="clear:both">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="name" name="name" placeholder="Name"    required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Mobile Number" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+                                            </div>
+                                            <div id="message_row" class="form-group row">
+                                                <div class="col-sm-12">
+                                                    <textarea type="textarea" id="message" class="form-control form-control-    danger"  placeholder="Message" maxlength="150" rows="5"></textarea>
+                                                </div>
+                                            </div>
+                                            <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit!</p></span>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" id="submit" name="submit" class="btn btn-primary pull-right">Send!</button>
+                        </div>
+                    </div>
+                </div>
+          </div> 
+          
+          <!-- Linked Scripts -->
+          <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+          <script type="text/javascript" src="js/form.js"></script>
+          <script type="text/javascript" src="js/smooth-scroll.js"></script>
+          <script type="text/javascript" src="js/lightbox.js"></script>
+          <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>   
+  </body>
+</html>
 
