@@ -4,9 +4,8 @@ $('a').click(function(event) {
     $root.animate({
         scrollTop: $(href).offset().top
     }, 800, function () {
-        event.stopPropagitation();
+        event.preventDefault();
         window.location.hash = href;
     });
-    event.stopPropagitation();
     return false;
 });
