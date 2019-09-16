@@ -1,11 +1,11 @@
 var $root = $('html, body');
-$('a').click(function(e) {
-    e.preventDefault();
+$('a').click(function() {
     var href = $.attr(this, 'href');
     $root.animate({
         scrollTop: $(href).offset().top
     }, 800, function () {
         window.location.hash = href;
     });
+    this.preventDefault();
     return false;
 });
