@@ -1,6 +1,6 @@
 var $root = $('html, body');
 $('a').click(function() {
-    this.preventDefault();
+    event.preventDefault();
     var href = $.attr(this, 'href');
     $root.animate({
         scrollTop: $(href).offset().top
