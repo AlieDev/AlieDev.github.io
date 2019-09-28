@@ -121,9 +121,6 @@
             border-width: 1px;
             cursor: pointer;
         }
-        .contact-col:hover {
-            background: radial-gradient(#e6e9f0, #fed6e3);
-        }
         .contact-col:hover .behind {
             transform: translate(0px, 40px);
             text-decoration: underline;
@@ -176,8 +173,7 @@
         height: 100%;
         width: 100%;
         opacity: 0;
-        transition: .5s ease;
-        background: linear-gradient(#e6e9f0, #fed6e3);      
+        transition: .5s ease;      
         }
         .c:hover .overlay {
         opacity: .83;
@@ -226,7 +222,7 @@
                       <span class="navbar-toggler-icon"></span>
                   </button>
                   <a style="cursor:pointer" class="navbar-brand" href="#home">
-                      <p class="h2 rb">de<span style="color: pink">s</span>in</p>
+                      <p class="h2 rb">de<span class="randomColor" style="color: pink">s</span>in</p>
                   </a>
                   <div class="collapse navbar-collapse " id="navbarSupportedContent">
                       <ul class="navbar-nav ml-auto rr text-center">
@@ -247,7 +243,7 @@
           <!-- First Container "Main, Home" -->
           <div id="home" class="main container-fluid">
               <div class="creative container text-center">
-                  <hr style="width:50px; height:4px;">
+                  <hr class="randomBackground" style="width:50px; height:4px;">
                   <h1 class="rl">I AM CREATIVE</h1>
                   <p class="rt h5 pt-2">just design.</p>
               </div>
@@ -265,7 +261,7 @@
                   <h5 class="rl">Portfolio</h5>
               </div>
               <div class="row pl-3">
-                  <hr class="mx-0 mb-5 mt-1">
+                  <hr class="mx-0 mb-5 mt-1 randomBackground">
               </div>
               <div class="row mb-sm-3">
                   
@@ -274,7 +270,7 @@
                       <a href="elements/pictures/fruit_big.jpg" data-lightbox="image-set" data-title="Fruits">
                           <figure class="row_img m-0" style="position: relative;">                        
                               <img class="img-fluid " alt="ananasy" src="./elements/pictures/fruit2.jpg">
-                              <div class="overlay"><img style="position: relative;top:47%;left:47%" class="" src="elements/pictures/search-logo.png"></div>
+                              <div class="overlay randomGradient"><img style="position: relative;top:47%;left:47%" class="" src="elements/pictures/search-logo.png"></div>
                           </figure>
                       </a>
                   </div>
@@ -284,7 +280,7 @@
                       <a href="elements/pictures/nature_big.jpg" data-lightbox="image-set" data-title="Nature">
                           <figure class="row_img m-0" style="position: relative;">
                               <img class="img-fluid row_img" alt="roślina" src="./elements/pictures/nature.jpg">
-                              <div class="overlay"><img style="position: relative;top:47%;left:47%" class="" src="elements/pictures/search-logo.png"></div>
+                              <div class="overlay randomGradient"><img style="position: relative;top:47%;left:47%" class="" src="elements/pictures/search-logo.png"></div>
                           </figure>
                       </a>
                   </div>
@@ -294,7 +290,7 @@
                       <a href="elements/pictures/museum_big.jpg" data-lightbox="image-set" data-title="Museum">
                           <figure class="row_img m-0" style="position: relative;">
                               <img class="img-fluid row_img" alt="schody" src="./elements/pictures/museum.jpg">
-                              <div class="overlay"><img style="position: relative;top:47%;left:47%" class="" src="elements/pictures/search-logo.png"></div>
+                              <div class="overlay randomGradient"><img style="position: relative;top:47%;left:47%" class="" src="elements/pictures/search-logo.png"></div>
                           </figure>
                       </a>
                   </div>
@@ -308,7 +304,7 @@
                       <a href="elements/pictures/chair_big.jpg" data-lightbox="image-set" data-title="Chair">
                           <figure class="row_img m-0" style="position: relative;">
                               <img class="img-fluid row_img" alt="biurko" src="./elements/pictures/chair.jpg">
-                              <div class="overlay"><img style="position: relative;top:47%;left:47%" class="" src="elements/pictures/search-logo.png"></div>
+                              <div class="overlay randomGradient"><img style="position: relative;top:47%;left:47%" class="" src="elements/pictures/search-logo.png"></div>
                           </figure>
                       </a>
                   </div>
@@ -318,7 +314,7 @@
                       <a href="elements/pictures/wheel_big.jpg" data-lightbox="image-set" data-title="Wheel">
                           <figure class="row_img m-0" style="position: relative;">
                               <img class="mg-fluid row_img" alt="koło" src="./elements/pictures/wheel.jpg">
-                              <div class="overlay"><img style="position: relative;top:47%;left:47%" class="" src="elements/pictures/search-logo.png"></div>
+                              <div class="overlay randomGradient" style="background: linear-gradient(rgb(55, 22, 122))"><img style="position: relative;top:47%;left:47%" class="" src="elements/pictures/search-logo.png"></div>
                           </figure>
                       </a>
                   </div>
@@ -334,7 +330,7 @@
               </div>
                           
               <div class="row pl-3">
-                  <hr class="mx-0 mb-5 mt-1">
+                  <hr class="mx-0 mb-5 mt-1 randomBackground">
               </div>
           </div>
           
@@ -361,11 +357,11 @@
                       <div class="col-xs-1 offset-md-1">
                           <img src="elements/pictures/circle.png" alt="branża" class="pr-3 ">
                       </div>
-			<div class="col-xs-10 rl id-s-t pb-5"> 	
+			        <div class="col-xs-10 rl id-s-t pb-5 pl-1"> 	
                           Web design <br>	
                           Mobile design <br>
                           UI design
-			</div>
+			        </div>
                   </div>
               </div>
           </div>
@@ -376,20 +372,20 @@
                   <h5 class="rl">Contact</h5>
               </div>
               <div class="row pl-3">
-                  <hr class="mx-0 mb-5 mt-1">
+                  <hr class="mx-0 mb-5 mt-1 randomBackground">
               </div>
               <div class="row text-center rl ms-auto">
-                  <div class="col-sm-12 col-md-4 col-xl-2 mx-auto contact-col pt-4 my-5" data-toggle="modal" data-target="#exampleModal">
+                  <div class="col-sm-12 col-md-4 col-xl-2 mx-auto contact-col pt-4 my-5 randomRadialGradient" data-toggle="modal" data-target="#exampleModal">
                       <a class="behind bh-1">example@email.com</a>
                       <img class="contact-img" src="elements/pictures/mail.jpg"  alt="mail">
                       <p class="pt-5">Write me an e-mail</p>
                   </div>
-                  <div class="col-sm-12 col-md-4 col-xl-2 mx-auto contact-col pt-4 my-5">
+                  <div class="col-sm-12 col-md-4 col-xl-2 mx-auto contact-col pt-4 my-5 randomRadialGradient">
                       <a class="behind bh-2">123-456-789</a>
                       <img class="contact-img" src="elements/pictures/mobile.jpg"  alt="mail">
                       <p class="pt-5">Call me</p>
                   </div>
-                  <div class="col-sm-12 col-md-4 col-xl-2 mx-auto contact-col pt-4 my-5">
+                  <div class="col-sm-12 col-md-4 col-xl-2 mx-auto contact-col pt-4 my-5 randomRadialGradient">
                       <a class="behind bh-3">www.your-portfolio.com</a>
                       <img class="contact-img" src="elements/pictures/behance.jpg"  alt="mail">
                       <p class="pt-5">Check out my portfolio</p>
@@ -458,6 +454,7 @@
           
           <!-- Linked Scripts -->
           <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+          <script type="text/javascript" src="js/color.js"></script>
           <script type="text/javascript" src="js/form.js"></script>
           <script type="text/javascript" src="js/smooth-scroll.js"></script>
           <script type="text/javascript" src="js/lightbox.js"></script>
