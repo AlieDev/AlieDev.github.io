@@ -8,7 +8,8 @@ function zmianaKoloru() {
 $('.randomColor').css('color', 'rgb(' + R + ',' + G +',' + B + ')');
 $('.randomBackground').css('background', 'rgb(' + R + ',' + G +',' + B + ')');
 $('.randomGradient').css('background', 'linear-gradient(white, rgb(' + R + ',' + G +',' + B + '))');
-$('.randomRadialGradient:hover').css('background', 'radial-gradient(white, rgb(' + R + ',' + G +',' + B + '))');
+$('.contact-col:hover').css('background', 'radial-gradient(white, rgb(' + R + ',' + G +',' + B + '))');
+
 // Red changing:
 if (R == 255) {
     Rmax = 1;
