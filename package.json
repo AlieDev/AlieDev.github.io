@@ -1,0 +1,22 @@
+{
+  "name": "aliedev.github.io",
+  "version": "1.0.0",
+  "description": "Projekt strony strony internetowej napisanej na podstawie graficznego wzoru ze strony psdrepo.com.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlieDev/AlieDev.github.io.git"
+  },
+  "author": "Alie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlieDev/AlieDev.github.io/issues"
+  },
+  "homepage": "https://github.com/AlieDev/AlieDev.github.io#readme",
+  "dependencies": {
+    "live-server": "^1.2.1"
+  }
+}
